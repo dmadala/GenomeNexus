@@ -61,7 +61,7 @@ public class GenomeNexus {
             URL url = new URL(GENOME_NEXUS_URL + av.getChromosome() + "%2C" + av.getStartPosition() + "%2C" + av.getEndPosition() + "%2C" + av.getReferenceAllele() + "%2C" + av.getVariantAllele() + "?fields=hotspots%2Cmutation_assessor");
             System.out.println("Calling:" + url);
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-            connection.setDoOutput(true);
+            connection.setDoOutput(false);
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-Type", "application/json");
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
